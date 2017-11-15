@@ -34,15 +34,8 @@ public class Birds extends Animal {
     }
 
     @Override
-    public String toString() {
-        return "Birds{" +
-                "fly=" + fly +
-                ", id='" + id + '\'' +
-                ", name='" + name + '\'' +
-                ", color='" + color + '\'' +
-                ", age=" + age +
-                ", isSick=" + isSick +
-                ", animalMonthlyBudget=" + animalMonthlyBudget +
-                '}';
-    }
+	public String toString() {
+		return "Birds [fly=" + fly + ", id=" + id + ", name=" + name + ", color=" + color + ", age=" + age + ", isSick="
+				+ isSick + ", animalMonthlyBudget=" + animalMonthlyBudget + "]";
+	}
 }

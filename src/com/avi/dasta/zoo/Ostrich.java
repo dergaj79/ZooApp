@@ -24,7 +24,8 @@ public class Ostrich extends Birds {
     }
 
     @Override
-    public String toString() {
-        return "Ostrich{" + "fly=" + fly + '}';
-    }
+	public String toString() {
+		return "Ostrich [fly=" + fly + ", id=" + id + ", name=" + name + ", color=" + color + ", age=" + age
+				+ ", isSick=" + isSick + ", animalMonthlyBudget=" + animalMonthlyBudget + "]";
+	}
 }

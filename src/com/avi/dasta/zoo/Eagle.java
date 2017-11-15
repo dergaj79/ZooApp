@@ -13,8 +13,11 @@ public class Eagle extends Birds {
         return fly;
     }
 
-    @Override
-    public void setFly(boolean fly) {
-        this.fly = fly;
-    }
+	@Override
+	public String toString() {
+		return "Eagle [fly=" + fly + ", id=" + id + ", name=" + name + ", color=" + color + ", age=" + age + ", isSick="
+				+ isSick + ", animalMonthlyBudget=" + animalMonthlyBudget + "]";
+	}
+
+ 
 }

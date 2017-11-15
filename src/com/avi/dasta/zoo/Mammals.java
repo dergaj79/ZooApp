@@ -9,13 +9,16 @@ import com.avi.dasta.zoo.Animal;
 public class Mammals extends Animal {
     protected boolean isPredator;
 
-    public Mammals(boolean isPredator) {
+    
+    public Mammals(String id, String name, String color, double age, boolean isSick, double animalMonthlyBudget) {
+		super(id, name, color, age, isSick, animalMonthlyBudget);
+	}
+
+	public Mammals(boolean isPredator) {
         this.isPredator = isPredator;
     }
 
-    public boolean isPredator() {
-        return isPredator;
-    }
+ 
 
     public void setPredator(boolean predator) {
         isPredator = predator;

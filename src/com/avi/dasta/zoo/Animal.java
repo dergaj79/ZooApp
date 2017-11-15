@@ -91,16 +91,10 @@ public class Animal {
     }
 
 
-    public void printAnimalBudget(){
-        //TODO;
-    }
-
     @Override
-    public String toString() {
-        return "Animal{" + "id='" + id + '\'' + ", name='" + name + '\'' + ", color='" + color + '\'' +
-                ", age=" + age +
-                ", isSick=" + isSick +
-                ", animalMonthlyBudget=" + animalMonthlyBudget + '}';
-    }
+	public String toString() {
+		return "Animal [id=" + id + ", name=" + name + ", color=" + color + ", age=" + age + ", isSick=" + isSick
+				+ ", animalMonthlyBudget=" + animalMonthlyBudget + ", sickAnimalPrice=" + sickAnimalPrice + "]";
+	}
 
 }

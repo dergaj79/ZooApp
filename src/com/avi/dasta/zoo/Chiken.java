@@ -18,8 +18,11 @@ public class Chiken extends Birds {
         this.fly = fly;
     }
 
-    @Override
-    public String toString() {
-        return "Chiken{" + "fly=" + fly + '}';
-    }
+	@Override
+	public String toString() {
+		return "Chiken [fly=" + fly + ", id=" + id + ", name=" + name + ", color=" + color + ", age=" + age
+				+ ", isSick=" + isSick + ", animalMonthlyBudget=" + animalMonthlyBudget + "]";
+	}
+
+   
 }

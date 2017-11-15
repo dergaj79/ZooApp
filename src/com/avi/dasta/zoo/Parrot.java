@@ -14,6 +14,12 @@ protected boolean fly =true;
     }
 
     @Override
+	public String toString() {
+		return "Parrot [fly=" + fly + ", id=" + id + ", name=" + name + ", color=" + color + ", age=" + age
+				+ ", isSick=" + isSick + ", animalMonthlyBudget=" + animalMonthlyBudget + "]";
+	}
+
+	@Override
     public void setFly(boolean fly) {
         this.fly = fly;
     }

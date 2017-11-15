@@ -2,15 +2,16 @@ package com.avi.dasta.zoo;
 
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.Collections.*;
 import java.util.List;
 
-public class Zoo implements Comparable{
-    //Members
-    protected int  zooCapacity = 100;
+public class Zoo{
+
+	//Members
+	protected int zooCapacity;
+
     protected double zooBudget;
-    protected int currentNumberOfAnimals = 0;
-    protected int currentZooBudget = 0;
+    protected double currentZooBudget;
+    
     List<Animal> animals;
 
     //Contractors
@@ -18,16 +19,35 @@ public class Zoo implements Comparable{
     public Zoo(int zooCapacity, double zooBudget) {
         this.zooCapacity = zooCapacity;
         this.zooBudget = zooBudget;
-        this.currentNumberOfAnimals = currentNumberOfAnimals;
         animals = new ArrayList<Animal>();
     }
 
-    public Zoo(int zooCapacity, double zooBudget, int currentNumberOfAnimals, List<Animal> animals) {
+    public Zoo(int zooCapacity, double zooBudget, List<Animal> animals) {
         this.zooCapacity = zooCapacity;
         this.zooBudget = zooBudget;
-        this.currentNumberOfAnimals = currentNumberOfAnimals;
-        this.animals = animals;
+        animals = new ArrayList<Animal>();
+        
+        for (Animal animal : animals) {
+			
+        	addAnimal(animal);
+		} 
     }
+
+	public void addAnimal(Animal animal) {
+		
+		if (animals.size() == zooCapacity) {
+			throw new RuntimeException("Zoo is full loeded please try letar on !!!");
+		}
+
+		double animalMonthlyBudget = animal.getAnimalMonthlyBudget();
+		if (zooBudget >= (animalMonthlyBudget + currentZooBudget)) {
+			animals.add(animal);
+			currentZooBudget = + animalMonthlyBudget;
+		} 
+		else {
+			throw new RuntimeException("You can't add new animal to the zoo, no budget!!!");
+		}
+	}
 
 
     //getters and setters
@@ -49,35 +69,14 @@ public class Zoo implements Comparable{
     }
 
     public int getCurrentNumberOfAnimals() {
-        return currentNumberOfAnimals;
-    }
-
-    public void setCurrentNumberOfAnimals(int currentNumberOfAnimals) {
-        this.currentNumberOfAnimals = currentNumberOfAnimals;
+        return animals.size();
     }
 
     public List<Animal> getAnimals() {
         return animals;
     }
 
-    public void setAnimals(List<Animal> animals) {
-        this.animals = animals;
-    }
-
     //getters and setters//
-
-   //methods//
-    public void addAnimalToZoo(Animal a) throws Exception{
-        if (currentNumberOfAnimals >= zooCapacity){
-            throw new Exception("No more Capcity in Zoo, Check later ON !");
-        }
-        if (currentZooBudget>=zooBudget){
-            throw new Exception ("NO Budget to adding more Animal to Zoo, Check later ON !");
-        }
-        animals.add(a);
-        currentNumberOfAnimals++;
-
-    }
 
     public void removeAnimal(){
 
@@ -86,7 +85,7 @@ public class Zoo implements Comparable{
 
         return;
     }
-    public List <Animal> printAmimalSortedByBudget (List<Animal> animals){
+    public List <Animal> printAnimalSortedByBudget (List<Animal> animals){
     int numberOfAnimals = animals.size();
         System.out.println(numberOfAnimals);
         for (int i=0; i< numberOfAnimals; i++){
@@ -99,7 +98,7 @@ public class Zoo implements Comparable{
         return animals;
     }
 
-    public List <Animal> printAmimalSortedByName (List<Animal> animals){
+    public List <Animal> printAnimalSortedByName (List<Animal> animals){
         int numberOfAnimals = animals.size();
         System.out.println(numberOfAnimals);
         for (int i=0; i< numberOfAnimals; i++){
@@ -112,7 +111,7 @@ public class Zoo implements Comparable{
         return animals;
     }
 
-    public List <Animal> printAmimalSortByBudget (List<Animal> animals){
+    public List <Animal> printAnimalSortByBudget (List<Animal> animals){
         int numberOfAnimals = animals.size();
         System.out.println(numberOfAnimals);
         for (int i=0; i< numberOfAnimals; i++){
@@ -125,20 +124,12 @@ public class Zoo implements Comparable{
         return animals;
     }
 
-    @Override
-    public String toString() {
-        return "Zoo [" +
-                "zooCapacity=" + zooCapacity +
-                ", zooBudget=" + zooBudget +
-                ", currentNumberOfAnimals=" + currentNumberOfAnimals +
-                ", currentZooBudget=" + currentZooBudget +
-                ", animals=" + animals + "]";
-    }
-
-    @Override
-    public int compareTo(Object o) {
-        return 0;
-    }
+	@Override
+	public String toString() {
+		return "Zoo [zooCapacity=" + zooCapacity + ", zooBudget=" + zooBudget + ", currentZooBudget=" + currentZooBudget
+				+ ", animals=" + animals + "]";
+	}
+   
 }
 
 
