@@ -1,12 +1,9 @@
-package com.avi.dasta.zoo;
-
-import com.avi.dasta.zoo.Animal;
+package com.avi.dasta.basic;
 
 public class Birds extends Animal {
 
     //Members
     protected boolean fly;
-
 
     //Getter and Setters
     public boolean isFly() {
@@ -16,7 +13,7 @@ public class Birds extends Animal {
         this.fly = fly;
     }
 
-    //Constrictors
+    //Constructors
 
     public Birds(String id, String name, String color, double age, boolean isSick, double animalMonthlyBudget, boolean fly) {
         super(id, name, color, age, isSick, animalMonthlyBudget);
@@ -26,10 +23,10 @@ public class Birds extends Animal {
     //Methods
     public void fly(){
         if (fly == true){
-            System.out.println(name + " Bird is flying");
+            System.out.println(name + " is flying");
         }
         else{
-            System.out.println("bird can't fly");
+            System.out.println("Can't fly");
         }
     }
 

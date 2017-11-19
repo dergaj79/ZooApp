@@ -2,19 +2,25 @@
  * this class hold dog parameters and return dog object!!!
  */
 
-package com.avi.dasta.zoo;
+package com.avi.dasta.mammal;
 
+import com.avi.dasta.basic.Mammals;
+
+/**
+ * @param id
+ * @param name
+ * @param color
+ * @param age
+ * @param isSick
+ * @param animalMonthlyBudget
+ * @param isPredator
+ */
 public class Dog extends Mammals {
-protected boolean isPredator = false;
-
-	public Dog(String id, String name, String color, double age, boolean isSick, double animalMonthlyBudget, boolean isPredator) {
+	
+public Dog(String id, String name, String color, double age, boolean isSick, double animalMonthlyBudget) {
 	super(id, name, color, age, isSick, animalMonthlyBudget);
-	this.isPredator = isPredator;
+	this.isPredator = false;
 }
-
-	public Dog(boolean isPredator) {
-        super(isPredator);
-    }
 
     @Override
     public void setPredator(boolean predator) {
@@ -25,8 +31,9 @@ protected boolean isPredator = false;
         System.out.println("Dod play Dead!!!");
     }
 
-    @Override
-    public String toString() {
-        return "Dog{" + "isPredator=" + isPredator + '}';
-    }
+	@Override
+	public String toString() {
+		return "Dog [isPredator=" + isPredator + ", id=" + id + ", name=" + name + ", color=" + color + ", age=" + age
+				+ ", isSick=" + isSick + ", animalMonthlyBudget=" + animalMonthlyBudget + "]";
+	}
 }

@@ -1,16 +1,15 @@
 /**
  * this class hold horse parameters and return horse object!!!
  */
-package com.avi.dasta.zoo;
+package com.avi.dasta.mammal;
+
+import com.avi.dasta.basic.Mammals;
 
 public class Horse extends Mammals {
-    protected boolean isPredator =false;
 
-    
-    public Horse(String id, String name, String color, double age, boolean isSick, double animalMonthlyBudget,
-			boolean isPredator) {
+    public Horse(String id, String name, String color, double age, boolean isSick, double animalMonthlyBudget) {
 		super(id, name, color, age, isSick, animalMonthlyBudget);
-		this.isPredator = isPredator;
+		this.isPredator = false;
 	}
 
 

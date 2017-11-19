@@ -2,16 +2,15 @@
  * this class hold cat parameters and return cat object!!!
  */
 
-package com.avi.dasta.zoo;
+package com.avi.dasta.mammal;
+
+import com.avi.dasta.basic.Mammals;
 
 public class Cat extends Mammals {
-    protected boolean isPredator = false;
-
-    
-    public Cat(String id, String name, String color, double age, boolean isSick, double animalMonthlyBudget,
-			boolean isPredator) {
+  
+    public Cat(String id, String name, String color, double age, boolean isSick, double animalMonthlyBudget) {
 		super(id, name, color, age, isSick, animalMonthlyBudget);
-		this.isPredator = isPredator;
+		this.isPredator = false;
 	}
 
     

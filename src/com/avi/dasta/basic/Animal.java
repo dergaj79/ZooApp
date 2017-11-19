@@ -1,4 +1,6 @@
-package com.avi.dasta.zoo;
+package com.avi.dasta.basic;
+
+import java.util.ArrayList;
 
 /**
  * this class presents the animal class for zoo app.
@@ -15,61 +17,7 @@ public class Animal {
     protected double animalMonthlyBudget;
     private double sickAnimalPrice = 0.05;
 
-    //Getters and Setters for the members//
-    public String getId() {
-        return id;
-    }
-
-    public void setId(String id) {
-        this.id = id;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public String getColor() {
-        return color;
-    }
-
-    public void setColor(String color) {
-        this.color = color;
-    }
-
-    public double getAge() {
-        return age;
-    }
-
-    public void setAge(double age) {
-        this.age = age;
-    }
-
-    public boolean isSick() {
-        return isSick;
-    }
-
-    public void setSick(boolean isSick) {
-       this.isSick = isSick;
-
-         if (isSick == true){
-             animalMonthlyBudget =+ (animalMonthlyBudget*sickAnimalPrice); //animal budget incearse by 5% in case the animal si sick.
-       }
-    }
-
-    public double getAnimalMonthlyBudget() {
-        return animalMonthlyBudget;
-    }
-
-    public void setMonthlyBudget(double animalMonthlyBudget) {
-        this.animalMonthlyBudget = animalMonthlyBudget;
-    }
-    //Constructors//
-
-
+//////////////////////////////////  //Constructors// //////////////////////////////////
     public Animal() {
     }
 
@@ -81,8 +29,70 @@ public class Animal {
         this.isSick = isSick;
         this.animalMonthlyBudget = animalMonthlyBudget;
     }
+//////////////////////////////////   //Constructors// //////////////////////////////////
+    
+//////////////////////////////////////Getters ////////////////////////////////////// 
+    
+    public String getId() {
+        return id;
+    }
+    
+    public String getName() {
+        return name;
+    }
+    
+    public String getColor() {
+        return color;
+    }
+    
+    public double getAge() {
+        return age;
+    }
 
-    //Methods//
+    public boolean isSick() {
+        return isSick;
+    }
+
+    public double getAnimalMonthlyBudget() {
+        return animalMonthlyBudget;
+    }
+ 
+//////////////////////////////////////Getters //////////////////////////////////////
+    
+////////////////////////////////////// Setters //////////////////////////////////////
+    
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+    
+    public void setColor(String color) {
+        this.color = color;
+    }
+
+    public void setAge(double age) {
+        this.age = age;
+    }
+
+    public void setMonthlyBudget(double animalMonthlyBudget) {
+        this.animalMonthlyBudget = animalMonthlyBudget;
+    }
+    
+    public void setSick(boolean isSick) {
+        this.isSick = isSick;
+          if (isSick == true){
+              animalMonthlyBudget = + (animalMonthlyBudget*sickAnimalPrice);
+        }
+     }
+    
+////////////////////////////////////// Setters //////////////////////////////////////
+    
+
+//////////////////////////////////////Methods //////////////////////////////////////
+
     public void eat(String name){
         System.out.println(name + " is eating");
     }
@@ -91,10 +101,12 @@ public class Animal {
     }
 
 
+    
+    
     @Override
 	public String toString() {
 		return "Animal [id=" + id + ", name=" + name + ", color=" + color + ", age=" + age + ", isSick=" + isSick
 				+ ", animalMonthlyBudget=" + animalMonthlyBudget + ", sickAnimalPrice=" + sickAnimalPrice + "]";
 	}
-
+//////////////////////////////////////Methods //////////////////////////////////////
 }

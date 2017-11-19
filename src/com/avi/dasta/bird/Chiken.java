@@ -1,11 +1,12 @@
-package com.avi.dasta.zoo;
+package com.avi.dasta.bird;
+
+import com.avi.dasta.basic.Birds;
 
 public class Chiken extends Birds {
-    protected boolean fly =false;
 
     public Chiken(String id, String name, String color, double age, boolean isSick, double animalMonthlyBudget, boolean fly, boolean fly1) {
         super(id, name, color, age, isSick, animalMonthlyBudget, fly);
-        this.fly = fly;
+        this.fly = false;
     }
 
     @Override

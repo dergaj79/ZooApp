@@ -1,11 +1,13 @@
-package com.avi.dasta.zoo;
+package com.avi.dasta.bird;
+
+import com.avi.dasta.basic.Birds;
 
 public class Ostrich extends Birds {
-    protected boolean fly =false;
+    
 
-    public Ostrich(String id, String name, String color, double age, boolean isSick, double animalMonthlyBudget, boolean fly, boolean fly1) {
+    public Ostrich(String id, String name, String color, double age, boolean isSick, double animalMonthlyBudget, boolean fly) {
         super(id, name, color, age, isSick, animalMonthlyBudget, fly);
-        this.fly = fly;
+        this.fly = false;
     }
 
     @Override
@@ -23,9 +25,13 @@ public class Ostrich extends Birds {
         }
     }
 
+
+
     @Override
 	public String toString() {
 		return "Ostrich [fly=" + fly + ", id=" + id + ", name=" + name + ", color=" + color + ", age=" + age
 				+ ", isSick=" + isSick + ", animalMonthlyBudget=" + animalMonthlyBudget + "]";
 	}
+	
+
 }

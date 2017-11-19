@@ -1,4 +1,6 @@
-package com.avi.dasta.zoo;
+package com.avi.dasta.bird;
+
+import com.avi.dasta.basic.Birds;
 
 public class Eagle extends Birds {
 

@@ -4,6 +4,8 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
+import com.avi.dasta.basic.Animal;
+
 public class Zoo{
 
 	//Members
@@ -42,7 +44,7 @@ public class Zoo{
 		double animalMonthlyBudget = animal.getAnimalMonthlyBudget();
 		if (zooBudget >= (animalMonthlyBudget + currentZooBudget)) {
 			animals.add(animal);
-			currentZooBudget = + animalMonthlyBudget;
+			currentZooBudget += animalMonthlyBudget;
 		} 
 		else {
 			throw new RuntimeException("You can't add new animal to the zoo, no budget!!!");
@@ -98,6 +100,7 @@ public class Zoo{
         return animals;
     }
 
+
     public List <Animal> printAnimalSortedByName (List<Animal> animals){
         int numberOfAnimals = animals.size();
         System.out.println(numberOfAnimals);
@@ -124,6 +127,18 @@ public class Zoo{
         return animals;
     }
 
+    public void printMeNicly(ArrayList<Animal>animals) {
+    	
+    	for (int i = 0; i < animals.size(); i++) {
+			System.out.println("\n" + i);
+			
+		}
+    	
+    }
+    
+    
+    
+    
 	@Override
 	public String toString() {
 		return "Zoo [zooCapacity=" + zooCapacity + ", zooBudget=" + zooBudget + ", currentZooBudget=" + currentZooBudget
